@@ -23,8 +23,7 @@
                multiple class="d-none form-control"
                id="input"
                ref="fileInput"
-               v-on:change="updateImages"
-               placeholder="Enter input" />
+               v-on:change="updateImages"/>
         <div class="d-flex justify-content-center gap-4">
           <button type="button"
                   :disabled="isLoading"
@@ -127,7 +126,6 @@ const submitNameCard = async()=>{
     link.href = url
     const fileName = url.split('/').pop()
     link.setAttribute('download', fileName)
-    link.target = '_blank'
     document.body.appendChild(link)
     link.click()
     files.value = []
@@ -147,10 +145,13 @@ const submitNameCard = async()=>{
   max-height: 350px;
 }
 
+button{
+  border-radius: 20%/50%;
+}
 button.delete-button{
   position: absolute;
-  top: 15px;
-  right: 15px;
+  top: 10%;
+  right: 15%;
   width: 2rem;
   height: 2rem;
   line-height: 2rem;
