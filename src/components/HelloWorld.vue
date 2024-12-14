@@ -58,7 +58,7 @@ import axios from "axios";
 
 const route = useRoute()
 
-const user = route.query.user as string
+const userId = route.query.userId as string
 
 const createForm = ref<HTMLFormElement|null>(null)
 
@@ -114,7 +114,7 @@ const submitNameCard = async()=>{
 
   try{
 
-    const response = await instance.post('/ocr',formData, {
+    const response = await instance.post(`/ocr?userId=${userId}`,formData, {
       headers: {
         'Content-Type': 'multipart/form-data',
       },
