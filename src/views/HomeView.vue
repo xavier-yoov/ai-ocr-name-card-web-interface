@@ -1,9 +1,11 @@
 <template>
-  <div class="home">
-    <HelloWorld msg=""/>
-  </div>
+  <App>
+      <HelloWorld msg=""/>
+  </App>
 </template>
 
 <script lang="ts" setup>
-import HelloWorld from '@/components/HelloWorld.vue';
+import App from "@/layouts/app.vue";
+import HelloWorld from '@/components/NameCardScanning.vue';
+
 </script>

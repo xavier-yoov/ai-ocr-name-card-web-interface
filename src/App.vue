@@ -1,24 +1,16 @@
 <template>
-  <nav class="navbar">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">
-        <img :src="YOOVLogo" class="d-inline-block align-text-top">
-      </a>
-    </div>
-  </nav>
-  <router-view/>
+    <router-view/>
 </template>
 
-<script setup lang="ts">import YOOVLogo from '@/assets/yoov-logo.png'
-</script>
+<script setup lang="ts"></script>
 
 
-<style scoped>
-
-.navbar .navbar-brand img{
-  width: 8rem;
-  max-width: 200px;
-
+<style>
+#app{
+  position: relative;
+  height: 100vh;
+  max-height: 100vh;
+  overflow-y:scroll;
 }
 
 

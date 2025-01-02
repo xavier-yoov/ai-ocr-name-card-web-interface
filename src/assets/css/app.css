@@ -1,6 +1,11 @@
 *{
-    font-family: Montserrat, "Helvetica Neue", Helvetica, -apple-system, "system-ui", "avenir next", avenir, "segoe ui", "helvetica neue", helvetica, Cantarell, Ubuntu, roboto, noto, arial, sans-serif;
+    font-family: "Figtree", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-weight: 400;
 }
+
+
 
 body{
     margin: 0;
@@ -12,6 +17,14 @@ body{
 }
 
 .btn.btn-primary{
-    background-color: rgb(0, 2, 145);
-    border-color: #007bff;
+    background-color: #0b0454;
+    border-color: #0b0454;
+}
+
+.bg-yoov-primary{
+    background-color: #0b0454;
+}
+
+.yoov-primary{
+    color: #0b0454;
 }
