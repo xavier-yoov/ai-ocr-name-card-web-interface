@@ -76,6 +76,11 @@ const routes: Array<RouteRecordRaw> = [
     name: 'register',
     component: () => import(/* webpackChunkName: "about" */ '../views/RegistrationView.vue')
   },
+  {
+    path: '/auth/oauth-callback',
+    name: 'oauthCallback',
+    component: () => import('../views/OauthCallback.vue')
+  }
 ]
 
 const router = createRouter({

@@ -1,26 +1,24 @@
 <template>
-  <div class="container">
-    <form class="form" @submit.prevent="login">
-    <div class="card bg-transparent border-0">
-      <div class="card-header bg-transparent border-0"><h5 class="card-title text-center">Login</h5></div>
-      <div class="card-body">
-        <input type="hidden" id="company_id" v-model="form.company_id" required>
-        <div class="form-group mb-3">
-          <input type="email" class="form-control" id="email" v-model="form.email" placeholder="Enter email" required>
+  <div class="container d-flex justify-content-center">
+    <div class="card" style="width: 500px">
+      <div class="card-body px-4">
+        <center style="margin-top: 20px; margin-bottom: 40px;">
+          <h3><strong>Login</strong></h3>
+        </center>
+        <form class="form" @submit.prevent="login">
+          <input type="email" class="form-control mb-3 mt-4" id="email" v-model="form.email" placeholder="Email" required>
+          <input type="password" class="form-control mt-4 mb-2" id="password" v-model="form.password" placeholder="Password" required>
+          <button type="submit" style="border-radius: 9999px;" class="btn btn-success px-5 w-100 mt-4 mb-4 btn-lg"  :disabled="isLoading">{{isLoading?"Loading...":"Login"}}</button>
+        </form>
+        <div style="color: gray" class="my-4 d-flex align-items-center flex-column">
+          <div style="font-size: 14px;">Or Sign Up With YOOV</div>
+          <button @click="loginYoov" type="button" style="border-radius: 9999px;" class="px-5 mt-3 btn-outline-success btn"  :disabled="isLoading">YOOV</button>
         </div>
-
-        <div class="form-group mb-3">
-          <input type="password" class="form-control" id="password" v-model="form.password" placeholder="Password" required>
-        </div>
-        </div>
-      <div class="card-footer bg-transparent border-0 d-flex justify-content-end">
-        <button type="submit" class="btn btn-success px-5"  :disabled="isLoading">{{isLoading?"Loading...":"Login"}}</button>
+        <p style="margin-top: 100px;">
+          <center>If you don't have account, please <router-link :to="{name:'register'}">Sign up!</router-link></center>
+        </p>
       </div>
-      </div>
-      <hr>
-      <p>If you don't have account, please <router-link :to="{name:'register'}">Sing up !</router-link></p>
-
-    </form>
+    </div>
   </div>
 </template>
 
@@ -30,7 +28,6 @@ import {ref} from 'vue';
 import {auth} from "@/api/endpoints";
 import {post} from "@/api";
 import {useRouter} from "vue-router";
-import AppNavbar from "@/components/Navbar.vue";
 
 const router = useRouter()
 
@@ -41,6 +38,8 @@ const form = ref({
   email: '',
   password: ''
 })
+
+const loginYoov = () => window.location.href = process.env.VUE_APP_PASSPORT_URL
 
 const login = (e: Event) => {
   isLoading.value = true
