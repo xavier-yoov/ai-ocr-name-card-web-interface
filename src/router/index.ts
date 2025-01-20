@@ -20,7 +20,12 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
     name: 'welcome',
-    component: () => import(/* webpackChunkName: "about" */ '../views/HomeView.vue')
+    component: () => import(/* webpackChunkName: "about" */ '../views/Welcome.vue')
+  },
+  {
+    path: '/invitation',
+    name: 'Invitation',
+    component: () => import(/* webpackChunkName: "about" */ '../views/Invitation.vue')
   },
   {
     path: '/app',
@@ -34,15 +39,12 @@ const routes: Array<RouteRecordRaw> = [
         beforeEnter: checkAuth,
         component: () => import(/* webpackChunkName: "about" */ '../views/HomeView.vue')
       },
-
       {
         path: '/contacts',
         name: 'Contacts',
         beforeEnter: checkAuth,
         component: () => import(/* webpackChunkName: "about" */ '../views/ContactsView.vue')
       },
-
-
       {
         path: '/contacts/:id',
         name: 'Contact Detail',
@@ -51,6 +53,12 @@ const routes: Array<RouteRecordRaw> = [
       },
 
       {
+        path: '/contacts/new',
+        name: 'Add Contact',
+        beforeEnter:checkAuth,
+        component: () => import(/* webpackChunkName: "about" */ '../views/Profile.vue')
+      },
+      {
         path: '/profile',
         name: 'Profile',
         beforeEnter: checkAuth,
@@ -58,11 +66,15 @@ const routes: Array<RouteRecordRaw> = [
       },
     ]
   },
-
   {
     path: '/login',
     name: 'login',
     component: () => import(/* webpackChunkName: "about" */ '../views/LoginView.vue')
+  },
+  {
+    path: '/register',
+    name: 'register',
+    component: () => import(/* webpackChunkName: "about" */ '../views/RegistrationView.vue')
   },
 ]
 

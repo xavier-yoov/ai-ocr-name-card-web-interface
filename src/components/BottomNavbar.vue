@@ -36,4 +36,8 @@ a.router-link-active i{
   color: #0b0454;
 }
 
+footer {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #ffffff 100%);
+}
+
 </style>

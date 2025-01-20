@@ -1,5 +1,6 @@
 import axios,{AxiosRequestConfig} from "axios";
 import {refresh, me} from "@/api/endpoints";
+import {parseJwt} from "@/helpers/auth";
 
 const base_url = process.env.VUE_APP_SERVICE_ENDPOINT
 
@@ -26,6 +27,10 @@ export function post(url:string, data:any, config?:AxiosRequestConfig) {
     return instance.post(url, data, getRequestConfig(config))
 }
 
+export function put(url:string, data:any, config?:AxiosRequestConfig) {
+    return instance.put(url, data, getRequestConfig(config))
+}
+
 
 export function get(url:string, config?:AxiosRequestConfig) {
     return instance.get(url, getRequestConfig(config))
@@ -33,7 +38,6 @@ export function get(url:string, config?:AxiosRequestConfig) {
 
 export function isAuth() {
     return get(me,{headers: {'Authorization': `Bearer ${localStorage.getItem('token')}`}})
-        .then(res=>console.log(res))
         .catch(err=> {
             if(err.response.status === 401){
                 post(refresh, {refresh_token: localStorage.getItem('refreshToken')})

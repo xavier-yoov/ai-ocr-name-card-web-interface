@@ -1,16 +1,12 @@
 <script setup lang="ts">
 
-import Navbar from "@/components/Navbar.vue";
+import NavbarLogin from "@/components/NavbarLogin.vue";
 import BottomNavbar from "@/components/BottomNavbar.vue";
 </script>
 
 <template>
   <div class="d-flex flex-column h-100">
-    <Navbar/>
+    <NavbarLogin/>
     <slot></slot>
   </div>
 </template>
-
-<style scoped>
-
-</style>

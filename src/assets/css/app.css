@@ -5,8 +5,6 @@
     font-weight: 400;
 }
 
-
-
 body{
     margin: 0;
     height: 100vh;
@@ -23,6 +21,10 @@ body{
 
 .bg-yoov-primary{
     background-color: #0b0454;
+}
+
+.btn.bg-yoov-primary:hover{
+    background-color: #1b09d3;
 }
 
 .yoov-primary{
